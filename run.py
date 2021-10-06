@@ -15,4 +15,18 @@ def show_board():
     print("|" + board[6] + "|" + board[7] + "|" + board[8] + "|")
     print("\n")
 
-show_board()    
+def play_the_game():
+
+    show_board() 
+
+    game_turn()   
+
+def game_turn():
+    """
+    Function to deal with the turn of each player. 
+    The can enter a number to choose a position on the board.
+    """ 
+    number = input("Please choose a number from 1 - 9: ")
+       
+
+play_the_game()    
