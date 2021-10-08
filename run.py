@@ -133,7 +133,18 @@ def check_diagonals():
     that the game is over and return the winner X or O
     or return None/False if there is no winner and jumps out of loop.
     """
-    return
+    global game_still_running
+
+    diagonal_1 = board[0] == board[4] == board[8] != "-"
+    diagonal_2 = board[2] == board[4] == board[6] != "-"
+    if diagonal_1 or diagonal_2:
+        game_still_running = False
+    if diagonal_1:
+        return board[0]
+    elif diagonal_2:
+        return board[2]
+    else:
+        return None 
 
 def check_columns():
     """
