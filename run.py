@@ -29,6 +29,9 @@ def show_board():
     print("\n")
 
 def play_the_game():
+    """
+    Function to play a game of Noughts and crosses.
+    """
 
     show_board() 
 
@@ -53,7 +56,7 @@ def play_the_game():
 def game_turn(player):
     """
     Function to deal with the turn of each player. 
-    The can enter a number to choose a position on the board.
+    They can enter a number to choose a position on the board.
     """ 
     number = input("Please choose a number from 1 - 9: ")
     
@@ -79,7 +82,52 @@ def see_if_winner():
     """
     Fuction to check to see if there is a winner.
     """ 
+    global winner
+    row_winner = check_rows()
+
+    diagonal_winner = check_diagonals()
+
+    column_winner = check_columns()
+
+    if row_winner:
+        winner = row_winner()
+    elif diagonal_winner:
+        winner = diagonal_winner()
+    elif column_winner:
+        winner = column_winner()
+    else:
+        winner = None            
     return
+
+def check_rows():
+    """
+    Function to check the rows for a win seeing if 
+    all rows have the same value and are not empty. 
+    If any rows do match it will flag the while loop 
+    that the game is over and return the winner X or O
+    or return false if there is no winner and jumps out of loop.
+    """
+    return
+
+def check_diagonals():
+    """
+    Function to check the diagonals for a win seeing if 
+    all diagonals have the same value and are not empty. 
+    If any diagonals do match it will flag the while loop 
+    that the game is over and return the winner X or O
+    or return false if there is no winner and jumps out of loop.
+    """
+    return
+
+def check_columns():
+    """
+    Function to check the columns for a win seeing if 
+    all columns have the same value and are not empty. 
+    If any columns do match it will flag the while loop
+     that the game is over and return the winner X or O
+    or return false if there is no winner and jumps out of loop.
+    """
+    return            
 
 def see_if_draw():
     """
