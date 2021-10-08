@@ -49,7 +49,16 @@ def game_turn():
     show_board()
 
 def see_if_game_is_over(): 
+    """
+    Fuction to see if game can end through win or draw.
+    """
     see_if_winner()
-    see_if_draw()      
+    see_if_draw()  
+
+def see_if_winner():  
+    return
+
+def see_if_draw():
+    return          
 
 play_the_game()    
