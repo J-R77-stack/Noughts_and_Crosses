@@ -49,7 +49,7 @@ def play_the_game():
         change_player()  
 
     if winner == "X" or winner == "O":
-        print(winner + "is the winner")
+        print(winner + " is the winner")
     elif winner == None:
         print("Its a draw")        
 
@@ -68,7 +68,7 @@ def game_turn(player):
     """
     number = int(number) - 1
 
-    board[number] = "X"
+    board[number] = player
     show_board()
 
 def see_if_game_is_over(): 
@@ -90,11 +90,11 @@ def see_if_winner():
     column_winner = check_columns()
 
     if row_winner:
-        winner = row_winner()
+        winner = row_winner
     elif diagonal_winner:
-        winner = diagonal_winner()
+        winner = diagonal_winner
     elif column_winner:
-        winner = column_winner()
+        winner = column_winner
     else:
         winner = None            
     return
@@ -161,7 +161,7 @@ def check_columns():
     column_3 = board[2] == board[5] == board[8] != "-"
     if column_1 or column_2 or column_3:
         game_still_running = False
-    if column1:
+    if column_1:
         return board[0]
     elif column_2:
         return board[1]
