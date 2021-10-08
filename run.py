@@ -58,6 +58,7 @@ def game_turn(player):
     Function to deal with the turn of each player. 
     They can enter a number to choose a position on the board.
     """ 
+    print(player + "Go!")
     number = input("Please choose a number from 1 - 9: ")
     
     """
@@ -173,7 +174,8 @@ def check_columns():
 
 def see_if_draw():
     """
-    Function to see if there is a draw. 
+    Function to see if there is a draw. Checks to see if
+    there are any "-" on board and if not ends game.
     """
     global game_still_running
     if "-" not in board:
