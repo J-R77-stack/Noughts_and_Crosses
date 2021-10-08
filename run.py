@@ -16,6 +16,8 @@ winner = None
 # Variable to inform the users who the current player is. Starts with player X
 current_player = "X"
 
+#-------- Functions -------------------------
+
 def show_board():
     """
     Function to print the game board to the screen on every round
@@ -62,19 +64,32 @@ def game_turn(player):
     number = input("Please choose a number from 1 - 9: ")
 
     """
-    While loop to keep asking user to enter a number from 1-9 
-    and to display Not allowed if incorrect input typed in
-    """
+    While loop to loop for correct input and spot on board is open.
 
-    while number not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-        number = input("Not Allowed! Please choose a number from 1 - 9: ")
     """
-    This will get the correct position in the borad list. 
-    As board is a string convert to integer. position is 1 - 9  
-    but elements in board Array are 0 - 8
-    so position 1 = 0 so need to subtract 1 from number.
-    """
-    number = int(number) - 1
+    allowed = False  
+    while not allowed:
+
+      """
+      While loop to keep asking user to enter a number from 1-9 
+      and to display Not allowed if incorrect input typed in
+      """  
+
+      while number not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+          number = input("Not Allowed! Please choose a number from 1 - 9: ")
+      """
+      This will get the correct position in the board list. 
+      As board is a string convert to integer. position is 1 - 9  
+      but elements in board Array are 0 - 8
+      so position 1 = 0 so need to subtract 1 from number.
+      """
+      number = int(number) - 1
+
+      if board[number] == "-":
+          allowed = True
+      else:    
+          print("That position is taken! Go again please")
+
 
     board[number] = player
     show_board()
