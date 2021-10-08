@@ -1,7 +1,20 @@
+#---------- Global Variables ------------
+
 # Variable containing a list to hold the board game data.
 board = ["-", "-", "-",
          "-", "-", "-", 
          "-", "-", "-",]
+
+# Variable to let the user know if the game is finished
+# set to True, will be False and break out of loop when game is over.
+game_still_running = True         
+
+# Variable to inform the user who the winner is. stays none when there is a draw
+# and changes to X or O when there is a winner
+winner = None
+
+# Variable to inform the users who the current player is. Starts with player X
+current_player = "X"
 
 def show_board():
     """
