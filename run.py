@@ -34,8 +34,10 @@ def play_the_game():
 
     while game_still_running:
         """
-        While loop to loop through which players turn it is 
-        and to then see if the game is over and change the player.
+        While loop to loop through which players turn it is, 
+        to see if the game is over and if X or O is the winner
+        or there is a tie and print the info to the console 
+        and to change the player on each round.
         """
         game_turn(current_player) 
 
@@ -43,7 +45,12 @@ def play_the_game():
 
         change_player()  
 
-def game_turn():
+    if winner == "X" or winner == "O":
+        print(winner + "is the winner")
+    elif winner == None:
+        print("Its a draw")        
+
+def game_turn(player):
     """
     Function to deal with the turn of each player. 
     The can enter a number to choose a position on the board.
