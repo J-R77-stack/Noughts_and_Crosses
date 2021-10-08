@@ -101,13 +101,29 @@ def see_if_winner():
 
 def check_rows():
     """
-    Function to check the rows for a win seeing if 
+    Function with if else statement to check the rows for a win seeing if 
     all rows have the same value and are not empty. 
     If any rows do match it will flag the while loop 
     that the game is over and return the winner X or O
-    or return false if there is no winner and jumps out of loop.
+    or return None/False if there is no winner and jumps out of loop.
     """
-    return
+    global game_still_running
+
+    row_1 = board[0] == board[1] == board[2] != "-"
+    row_2 = board[3] == board[4] == board[5] != "-"
+    row_3 = board[6] == board[7] == board[8] != "-"
+    if row_1 or row_2 or row_3:
+        game_still_running = False
+    if row_1:
+        return board[0]
+    elif row_2:
+        return board[3]
+    elif row_3:
+        return board[6]
+    else:
+        return None   
+
+        
 
 def check_diagonals():
     """
@@ -115,7 +131,7 @@ def check_diagonals():
     all diagonals have the same value and are not empty. 
     If any diagonals do match it will flag the while loop 
     that the game is over and return the winner X or O
-    or return false if there is no winner and jumps out of loop.
+    or return None/False if there is no winner and jumps out of loop.
     """
     return
 
@@ -125,7 +141,7 @@ def check_columns():
     all columns have the same value and are not empty. 
     If any columns do match it will flag the while loop
      that the game is over and return the winner X or O
-    or return false if there is no winner and jumps out of loop.
+    or return None/False if there is no winner and jumps out of loop.
     """
     return            
 
