@@ -175,6 +175,9 @@ def see_if_draw():
     """
     Function to see if there is a draw. 
     """
+    global game_still_running
+    if "-" not in board:
+        game_still_running = False
     return   
 
 def change_player():
