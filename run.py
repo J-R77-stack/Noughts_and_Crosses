@@ -19,7 +19,16 @@ def play_the_game():
 
     show_board() 
 
-    game_turn()   
+    while game_still_running:
+        """
+        While loop to loop through which players turn it is 
+        and to then see if the game is over and change the player.
+        """
+        game_turn(current_player) 
+
+        see_if_game_is_over()
+
+        change_player()  
 
 def game_turn():
     """
@@ -28,11 +37,19 @@ def game_turn():
     """ 
     number = input("Please choose a number from 1 - 9: ")
     
-    # This will get the correct position in the borad list
+    """
+    This will get the correct position in the borad list. 
+    As board is a string convert to integer. position is 1 - 9  
+    but elements in board Array are 0 - 8
+    so position 1 = 0 so need to subtract 1 from number.
+    """
     number = int(number) - 1
 
     board[number] = "X"
     show_board()
-       
+
+def see_if_game_is_over(): 
+    see_if_winner()
+    see_if_draw()      
 
 play_the_game()    
