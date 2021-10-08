@@ -27,6 +27,12 @@ def game_turn():
     The can enter a number to choose a position on the board.
     """ 
     number = input("Please choose a number from 1 - 9: ")
+    
+    # This will get the correct position in the borad list
+    number = int(number) - 1
+
+    board[number] = "X"
+    show_board()
        
 
 play_the_game()    
