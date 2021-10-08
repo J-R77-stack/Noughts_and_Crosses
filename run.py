@@ -55,10 +55,22 @@ def see_if_game_is_over():
     see_if_winner()
     see_if_draw()  
 
-def see_if_winner():  
+def see_if_winner(): 
+    """
+    Fuction to check to see if there is a winner.
+    """ 
     return
 
 def see_if_draw():
-    return          
+    """
+    Function to see if there is a draw. 
+    """
+    return   
+
+def change_player():
+    """
+    Fuction to change the player from X to O and inform the user whose turn it is.
+    """
+    return           
 
 play_the_game()    
