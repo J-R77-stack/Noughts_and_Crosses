@@ -179,8 +179,13 @@ def see_if_draw():
 
 def change_player():
     """
-    Fuction to change the player from X to O and inform the user whose turn it is.
+    Fuction to change the player from X to O and O to X.
     """
+    global current_player
+    if current_player == "X":
+        current_player = "O"
+    elif current_player == "O":
+        current_player = "X"    
     return           
 
 play_the_game()    
