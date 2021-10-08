@@ -58,9 +58,16 @@ def game_turn(player):
     Function to deal with the turn of each player. 
     They can enter a number to choose a position on the board.
     """ 
-    print(player + "Go!")
+    print(player + " Go!")
     number = input("Please choose a number from 1 - 9: ")
-    
+
+    """
+    While loop to keep asking user to enter a number from 1-9 
+    and to display Not allowed if incorrect input typed in
+    """
+
+    while number not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        number = input("Not Allowed! Please choose a number from 1 - 9: ")
     """
     This will get the correct position in the borad list. 
     As board is a string convert to integer. position is 1 - 9  
