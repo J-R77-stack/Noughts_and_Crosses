@@ -154,7 +154,22 @@ def check_columns():
      that the game is over and return the winner X or O
     or return None/False if there is no winner and jumps out of loop.
     """
-    return            
+    global game_still_running
+
+    column_1 = board[0] == board[3] == board[6] != "-"
+    column_2 = board[1] == board[4] == board[7] != "-"
+    column_3 = board[2] == board[5] == board[8] != "-"
+    if column_1 or column_2 or column_3:
+        game_still_running = False
+    if column1:
+        return board[0]
+    elif column_2:
+        return board[1]
+    elif column_3:
+        return board[2]
+    else:
+        return None  
+                
 
 def see_if_draw():
     """
