@@ -55,6 +55,7 @@ Two players play against each other, taking turns, one is O's and the other is X
 
 ## Testing 
 --------------------------------------------------------------
+* Passed code through a PEP8 linter and confirmed there are no problems.
 * Ran the code through [PEP8](http://pep8online.com/) and found a number of errors which were then fixed.
 
 ![](/images/errors.png)
