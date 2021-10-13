@@ -1,12 +1,22 @@
 # ---------- Global Variables ------------
 
 # Variable containing a list to hold the board game data.
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-"]
+
+board = [
+    '-',
+    '-',
+    '-',
+    '-',
+    '-',
+    '-',
+    '-',
+    '-',
+    '-',
+    ]
 
 # Variable to let the user know if the game is finished
 # set to True, will be False and break out of loop when game is over.
+
 game_still_running = True
 
 # Variable to inform the user who the winner is. stays none
@@ -15,47 +25,44 @@ game_still_running = True
 winner = None
 
 # Variable to inform the users who the current player is. Starts with player X
-current_player = "X"
+
+current_player = 'X'
+
 
 # -------- Functions -------------------------
-
 
 def show_board():
     """
     Function to print the game board to the screen on every round
     """
-    print("\n")
-    print("Welcome to Noughts and Crosses")
-    print("\n")
-    print("|" + board[0] + "|" + board[1] + "|" + board[2] + "|")
-    print("|" + board[3] + "|" + board[4] + "|" + board[5] + "|")
-    print("|" + board[6] + "|" + board[7] + "|" + board[8] + "|")
-    print("\n")
+
+    print ('\n')
+    print ('Welcome to Noughts and Crosses')
+    print ('\n')
+    print ('|' + board[0] + '|' + board[1] + '|' + board[2] + '|')
+    print ('|' + board[3] + '|' + board[4] + '|' + board[5] + '|')
+    print ('|' + board[6] + '|' + board[7] + '|' + board[8] + '|')
+    print ('\n')
 
 
 def play_the_game():
     """
     Function to play a game of Noughts and crosses.
     """
+
     show_board()
 
     while game_still_running:
-        """
-        While loop to loop through which players turn it is,
-        to see if the game is over and if X or O is the winner
-        or there is a tie and print the info to the console
-        and to change the player on each round.
-        """
         game_turn(current_player)
 
         see_if_game_is_over()
 
         change_player()
 
-    if winner == "X" or winner == "O":
-        print(winner + " is the winner")
+    if winner == 'X' or winner == 'O':
+        print (winner + ' is the winner')
     elif winner == None:
-        print("Its a draw")
+        print ('Its a draw')
 
 
 def game_turn(player):
@@ -63,35 +70,33 @@ def game_turn(player):
     Function to deal with the turn of each player.
     They can enter a number to choose a position on the board.
     """
-    print(player + " Go!")
-    number = input("Please choose a number from 1 - 9: ")
 
-    """
-    While loop to loop for correct input and spot on board is open.
+    print (player + ' Go!')
+    number = input('Please choose a number from 1 - 9: ')
 
-    """
     allowed = False
     while not allowed:
 
-      """
-      While loop to keep asking user to enter a number from 1-9
-      and to display Not allowed if incorrect input typed in
-      """
+        while number not in [
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+        ]:
+            number = \
+                input('Not Allowed! Please choose a number from 1 - 9: '
+                      )
+        number = int(number) - 1
 
-      while number not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-          number = input("Not Allowed! Please choose a number from 1 - 9: ")
-      """
-      This will get the correct position in the board list.
-      As board is a string convert to integer. position is 1 - 9
-      but elements in board Array are 0 - 8
-      so position 1 = 0 so need to subtract 1 from number.
-      """
-    number = int(number) - 1
-
-    if board[number] == "-":
-        allowed = True
-    else:
-        print("That position is taken! Go again please")
+        if board[number] == '-':
+            allowed = True
+        else:
+            print ('That position is taken! Go again please')
 
     board[number] = player
 
@@ -102,6 +107,7 @@ def see_if_game_is_over():
     """
     Fuction to see if game can end through win or draw.
     """
+
     see_if_winner()
     see_if_draw()
 
@@ -110,6 +116,7 @@ def see_if_winner():
     """
     Fuction to check to see if there is a winner.
     """
+
     global winner
     row_winner = check_rows()
 
@@ -136,11 +143,12 @@ def check_rows():
     that the game is over and return the winner X or O
     or return None/False if there is no winner and jumps out of loop.
     """
+
     global game_still_running
 
-    row_1 = board[0] == board[1] == board[2] != "-"
-    row_2 = board[3] == board[4] == board[5] != "-"
-    row_3 = board[6] == board[7] == board[8] != "-"
+    row_1 = board[0] == board[1] == board[2] != '-'
+    row_2 = board[3] == board[4] == board[5] != '-'
+    row_3 = board[6] == board[7] == board[8] != '-'
     if row_1 or row_2 or row_3:
         game_still_running = False
     if row_1:
@@ -161,10 +169,11 @@ def check_diagonals():
     that the game is over and return the winner X or O
     or return None/False if there is no winner and jumps out of loop.
     """
+
     global game_still_running
 
-    diagonal_1 = board[0] == board[4] == board[8] != "-"
-    diagonal_2 = board[2] == board[4] == board[6] != "-"
+    diagonal_1 = board[0] == board[4] == board[8] != '-'
+    diagonal_2 = board[2] == board[4] == board[6] != '-'
     if diagonal_1 or diagonal_2:
         game_still_running = False
     if diagonal_1:
@@ -183,11 +192,12 @@ def check_columns():
      that the game is over and return the winner X or O
     or return None/False if there is no winner and jumps out of loop.
     """
+
     global game_still_running
 
-    column_1 = board[0] == board[3] == board[6] != "-"
-    column_2 = board[1] == board[4] == board[7] != "-"
-    column_3 = board[2] == board[5] == board[8] != "-"
+    column_1 = board[0] == board[3] == board[6] != '-'
+    column_2 = board[1] == board[4] == board[7] != '-'
+    column_3 = board[2] == board[5] == board[8] != '-'
     if column_1 or column_2 or column_3:
         game_still_running = False
     if column_1:
@@ -205,8 +215,9 @@ def see_if_draw():
     Function to see if there is a draw. Checks to see if
     there are any "-" on board and if not ends game.
     """
+
     global game_still_running
-    if "-" not in board:
+    if '-' not in board:
         game_still_running = False
     return
 
@@ -215,11 +226,13 @@ def change_player():
     """
     Fuction to change the player from X to O and O to X.
     """
+
     global current_player
-    if current_player == "X":
-        current_player = "O"
-    elif current_player == "O":
-        current_player = "X"
+    if current_player == 'X':
+        current_player = 'O'
+    elif current_player == 'O':
+        current_player = 'X'
     return
+
 
 play_the_game()
