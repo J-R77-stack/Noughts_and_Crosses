@@ -1,31 +1,66 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Noughts and Crosses
 
-Welcome J-R77-stack,
+Noughts and Crosses is a two player game that is played in the python terminal. It is run in the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Here is the live version link to my project](https://noughts-and-crosses-1.herokuapp.com/)
 
-## Reminders
+![](/images/responsive.png)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How to play
+----------------------------------------------------
 
-## Creating the Heroku app
+Noughts and crosses is an alternative name for the game Tic-tac-toe. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Two players play against each other, taking turns, one is O's and the other is X's. There are nice spaces on the board and the winner must get three X's or O's in a row, column or diagonal. If either played does not get three in a row, column or diagonal the game is a draw.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Features
+-----------------------------------------------------
+* Game board display
+  * Welcomes players to a game of noughts and crosses.
+  * Shows the board and indicates that X should go first.
+  * Asks the player to choose a number between 1-9.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+![](/images/board.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* X chooses a number between 1-9 and it is displayed on the board. In this case the player chose 1 and X is displayed in position 1.
+* O is now told to go.
 
-Connect your GitHub repository and deploy as normal.
+![](/images/board1.png)
 
-## Constraints
+* Now O chooses a number between 1-9 and it is displayed on the board. In this case the player chose 2 and O is displayed in position 2.
+* X is now told to go.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+![](images/board3.png)
 
------
-Happy coding!
+* Input validation and error checking.
+  * You cannot enter the same number/position twice.
+  * You can only enter numbers.
+
+![](/images/board4.png)
+![](/images/board5.png)
+
+* Winner screen
+
+![](/images/winner.png)
+
+* Draw screen
+
+![](/images/draw.png)
+
+## Future Features
+------------------------------------------------------------
+* Allow player to play against computer.
+* Randomly select who goes first each time, X or O.
+* Keep game score.
+
+## Testing 
+--------------------------------------------------------------
+* Ran the code through [PEP8](http://pep8online.com/) and found a number of errors which were then fixed.
+
+![](/images/errors.png)
+![](/images/allright.png)
+
+
+
+
+
