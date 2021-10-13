@@ -11,7 +11,7 @@ Noughts and Crosses is a two player game that is played in the python terminal. 
 
 Noughts and crosses is an alternative name for the game Tic-tac-toe. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-Two players play against each other, taking turns, one is O's and the other is X's. There are nice spaces on the board and the winner must get three X's or O's in a row, column or diagonal. If either played does not get three in a row, column or diagonal the game is a draw.
+Two players play against each other, taking turns, one is O's and the other is X's. There are nine spaces on the board and the winner must get three X's or O's in a row, column or diagonal. If either player does not get three in a row, column or diagonal the game is a draw.
 
 ## Features
 -----------------------------------------------------
@@ -22,12 +22,12 @@ Two players play against each other, taking turns, one is O's and the other is X
 
 ![](/images/board.png)
 
-* X chooses a number between 1-9 and it is displayed on the board. In this case the player chose 1 and X is displayed in position 1.
+* X chooses a number between 1-9 and it is displayed on the board. In this case the player choses 1 and X is displayed in position 1.
 * O is now told to go.
 
 ![](/images/board1.png)
 
-* Now O chooses a number between 1-9 and it is displayed on the board. In this case the player chose 2 and O is displayed in position 2.
+* Now O chooses a number between 1-9 and it is displayed on the board. In this case the player choses 2 and O is displayed in position 2.
 * X is now told to go.
 
 ![](images/board3.png)
@@ -39,11 +39,11 @@ Two players play against each other, taking turns, one is O's and the other is X
 ![](/images/board4.png)
 ![](/images/board5.png)
 
-* Winner screen
+* Winner screen.
 
 ![](/images/winner.png)
 
-* Draw screen
+* Draw screen.
 
 ![](/images/draw.png)
 
