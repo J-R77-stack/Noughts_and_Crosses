@@ -61,7 +61,7 @@ def play_the_game():
 
     if winner == 'X' or winner == 'O':
         print (winner + ' is the winner')
-    elif winner == None:
+    elif winner is None:
         print ('Its a draw')
 
 
@@ -72,7 +72,7 @@ def game_turn(player):
     """
 
     print (player + ' Go!')
-    number = input('Please choose a number from 1 - 9: ')
+    number = input('Please choose a number from 1 - 9:\n')
 
     allowed = False
     while not allowed:
@@ -89,8 +89,7 @@ def game_turn(player):
             '9',
         ]:
             number = \
-                input('Not Allowed! Please choose a number from 1 - 9: '
-                      )
+                input('Not Allowed! Please choose a number from 1 - 9:\n')
         number = int(number) - 1
 
         if board[number] == '-':
