@@ -60,6 +60,25 @@ Two players play against each other, taking turns, one is O's and the other is X
 ![](/images/errors.png)
 ![](/images/allright.png)
 
+* I inputted invalid numbers and words and well as same numbers and positions on board.
+* Tested in my local teminal and the Code Institute Heroku terminal.
+
+## Deployment
+---------------------------------------------------------------
+
+* Steps for deployment.
+  * Create a new Heroku app called noughts-and-crosses.
+  * Set a config var of key PORT value 8000.
+  * Set the buildbacks to python and nodejs in that order.
+  * Link the Heroku app to the respository.
+  * Click on Deploy.
+
+  ## Credits
+  --------------------------------------------------------------
+  * Code Institute for the lessons and deployment terminal.
+  * Wikipedia for the details of the Tic-tac-toe game.
+
+
 
 
 
